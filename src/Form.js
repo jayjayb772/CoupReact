@@ -26,6 +26,8 @@ class JoinForm extends React.Component {
 
     submit(name, gamecode) {
         this.apiClient.playerJoin(name, gamecode)
+        this.updateGamecode('');
+        this.updateName('');
     }
 
     render() {
