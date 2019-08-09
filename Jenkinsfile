@@ -4,6 +4,6 @@ stage('Build') {
        sh 'npm install'
         }
         stage('Run'){
-                sh 'npm start'
+                sh 'npm start &'
         }
 }
