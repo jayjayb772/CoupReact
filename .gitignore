@@ -11,6 +11,14 @@ pids
 *.seed
 *.pid.lock
 
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
 .idea/workspace.xml
 .idea/
 
