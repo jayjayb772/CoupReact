@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import APIClient from './API/APIClient';
+import {GridList} from "@material-ui/core";
 
 class JoinForm extends React.Component {
 
@@ -48,7 +49,7 @@ class JoinForm extends React.Component {
                 />
                 <br/>
                 <button onClick={() => {this.submit(this.state.name, this.state.gamecode)}}>Submit</button>
-            </form>
+                </form>
         )
     }
 }
