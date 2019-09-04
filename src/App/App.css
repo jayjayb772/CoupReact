@@ -31,3 +31,12 @@
     transform: rotate(360deg);
   }
 }
+
+.grid{
+  display: flex;
+  justify-content: center;
+}
+
+.paper{
+  width:85%;
+}

@@ -10,23 +10,22 @@ const client = axios.create({
 
 class APIClient {
     constructor() {
+        this.client = client;
     }
 
     playerJoin(player, gamecode){
        let data = {'player':player,'gamecode':gamecode};
-
-       let resp = fetch('http://127.0.0.1:5000/joinSubmit',{
-           method:'POST',
-           body: JSON.stringify({
-               name: player,
-               gamecode: gamecode
-           })
-       }).then(res=>res.json())
-           .then(res=>console.log(res));
-
-
-        console.log(resp);
+       let resp = client.post(`${BASE_URI}/joinSubmit`, JSON.stringify({
+           name: player,
+           gamecode: gamecode
+       }) ).then(res => {
+           console.log(res);
+       }).catch(error => {
+           console.log('erro', error);
+       })
+        // console.log(resp);
         // this.perform('POST','/joinSubmit',data)
+        return resp;
     }
 
     getPlayers(gamecode){

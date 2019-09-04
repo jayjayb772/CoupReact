@@ -1,6 +1,25 @@
 import React, { Component } from 'react';
-import APIClient from './API/APIClient';
+import APIClient from './Components/API/APIClient';
 import {GridList} from "@material-ui/core";
+import TextField from "@material-ui/core/TextField";
+
+const useStyles = makeStyles(theme => ({
+    container: {
+        display: 'flex',
+        flexWrap: 'wrap',
+    },
+    textField: {
+        marginLeft: theme.spacing(1),
+        marginRight: theme.spacing(1),
+        width: 200,
+    },
+    dense: {
+        marginTop: 19,
+    },
+    menu: {
+        width: 200,
+    },
+}));
 
 class JoinForm extends React.Component {
 
@@ -34,7 +53,8 @@ class JoinForm extends React.Component {
     render() {
         return (
             <form>
-                Name
+
+                <TextField id="name" label="Name"/>
                 <input
                     type="text"
                     onChange={(event) => {this.updateName(event.target.value)}}

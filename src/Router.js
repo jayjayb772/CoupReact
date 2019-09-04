@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import App from './App';
-import APIClient from './API/APIClient'
+import App from './App/App';
+import APIClient from './Components/API/APIClient'
 
 async function componentDidMount()
 {
@@ -22,6 +22,9 @@ function BasicExample() {
                     <li>
                         <Link to="/topics">Topics</Link>
                     </li>
+                    <li>
+                        <Link to="/inGame">in game</Link>
+                    </li>
                 </ul>
 
                 <hr />
@@ -29,9 +32,19 @@ function BasicExample() {
                 <Route exact path="/" component={Join} />
                 <Route path="/waiting" component={Waiting} />
                 <Route path="/topics" component={Topics} />
+                <Route path="/inGame" component={Game}/>
+
             </div>
         </Router>
     );
+}
+
+function Game(){
+    return (
+        <div>
+
+        </div>
+    )
 }
 
 function Join() {
